@@ -52,8 +52,7 @@ export const LoginForm = () => {
         placeholder="email"
         className="form-control"
       />
-      <div>{JSON.stringify(currentUser.userData, null, 2)}</div>
-      <div>{JSON.stringify(currentUser.isLoggedIn, null, 2)}</div>
+      
       {formik.errors.email && formik.touched.email ? (
         <div>{formik.errors.email}</div>
       ) : null}
