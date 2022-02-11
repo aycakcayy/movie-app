@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux"
 import { useState } from "react";
 import ReactPaginate from 'react-paginate';
+import {Link} from "react-router-dom";
 
 
 function Home(props) {
@@ -123,7 +124,7 @@ function Home(props) {
             discoverMovie?.data?.data?.results?.map((item, index) =>
 
               <div className={`card card-block col-md-2 mx-4 ${theme === "light" ? "bg-light" : "bg-dark"}`} id="home-block">
-                <img src={`${POSTER_BASE_URL}${item.poster_path}`} className="card-img-top" alt="..." />
+               <Link to={`${item.id}`}> <img src={`${POSTER_BASE_URL}${item.poster_path}`} className="card-img-top" alt="..." /> </Link>
                 <div className={`card-body ${theme === "light" ? "text-dark" : "text-light"}`}>
                   <p className="card-title">{item.title}</p>
                   <p className="card-text">{item.release_date}</p>
@@ -143,7 +144,7 @@ function Home(props) {
           {
             trendingMovie?.data?.data?.results?.map((item, index) =>
               <div className={`card card-block col-md-2 mx-4 ${theme.backgroundColor} ${theme === "light" ? "bg-light" : "bg-dark"}`} id="home-block">
-                <img src={`${POSTER_BASE_URL}${item.poster_path}`} className="card-img-top" alt="..." />
+                <Link to={`${item.id}`}> <img src={`${POSTER_BASE_URL}${item.poster_path}`} className="card-img-top" alt="..." /> </Link>
                 <div className={`card-body ${theme.color} ${theme === "light" ? "text-dark" : "text-light"}`}>
                   <p className="card-title">{item.title}</p>
                   <p className="card-text">{item.release_date}</p>

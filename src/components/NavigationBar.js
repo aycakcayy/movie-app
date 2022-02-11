@@ -13,11 +13,16 @@ import {MoonIcon, SunIcon, ThemeChangerButton} from  "../styledComponents/icons"
 
 function NavigationBar() {
 
+
   const location = useLocation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [clicked, setClicked] = useState(false)
     const { theme, user } = useSelector(state => state)
+
+    function handleChange(value) {
+      navigate(`${value}`);
+    }
 
 
   return (
@@ -28,7 +33,17 @@ function NavigationBar() {
            Movie App
         </Navbar.Brand>
        
-        <Nav className="me-auto">
+       <select onChange={(event) => handleChange(event.target.value)}>
+         <option value="/">Movies</option>
+         <option value="popular">Popular</option>
+         <option value="toprated">Top Rated</option>
+       </select>
+
+
+        <Nav className="ms-auto">
+
+         
+
           
           <Nav.Link
             onClick={() => {
@@ -37,6 +52,7 @@ function NavigationBar() {
           >
             Home
           </Nav.Link>
+
           
           <Nav.Link
             onClick={() => {
