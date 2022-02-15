@@ -2,8 +2,6 @@ import {fetchTopRatedMovie} from "../api/index"
 import { useQuery } from "react-query";
 import {Link} from "react-router-dom";
 
-
-
 function TopRated(){
 
     const topRated = useQuery(
@@ -37,5 +35,4 @@ function TopRated(){
         </>
     )
 }
-
 export default TopRated

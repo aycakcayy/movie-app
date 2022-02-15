@@ -9,10 +9,7 @@ import { changeTheme } from "../reduxStore/themeChanger"
 import { Link } from "react-router-dom"
 import {MoonIcon, SunIcon, ThemeChangerButton} from  "../styledComponents/icons"
 
-
-
 function NavigationBar() {
-
 
   const location = useLocation()
   const navigate = useNavigate()
@@ -23,7 +20,6 @@ function NavigationBar() {
     function handleChange(value) {
       navigate(`${value}`);
     }
-
 
   return (
     <Navbar theme={theme} bg="dark" variant="dark">
@@ -42,9 +38,6 @@ function NavigationBar() {
 
         <Nav className="ms-auto">
 
-         
-
-          
           <Nav.Link
             onClick={() => {
               navigate("/")
@@ -61,9 +54,7 @@ function NavigationBar() {
           >
             Login
           </Nav.Link>
-          
-                   
-
+                 
           <ThemeChangerButton theme={theme}
             onClick={() => dispatch(changeTheme(theme))}
         >
@@ -71,16 +62,10 @@ function NavigationBar() {
                 theme === "light" ? <MoonIcon /> : <SunIcon />
             }
         </ThemeChangerButton>
-        
-          
 
         </Nav>
       </Container>
     </Navbar>
   )
-  
-
- 
 }
-
 export default NavigationBar

@@ -2,7 +2,6 @@ import {fetchPopularMovie} from "../api"
 import { useQuery } from "react-query";
 import {Link} from "react-router-dom";
 
-
 function Popular(){
 
     const popularMovie = useQuery(
@@ -12,7 +11,6 @@ function Popular(){
       );
 
       const POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500";
-
 
     return(
 
@@ -33,5 +31,4 @@ function Popular(){
         </>
     )
 }
-
 export default Popular

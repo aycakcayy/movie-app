@@ -56,10 +56,6 @@ function Home(props) {
 
   return (
     <>
-
-
-
-     
       
         <div className='container'>
         <div className="input-group flex-nowrap my-5 ">

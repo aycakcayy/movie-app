@@ -17,6 +17,8 @@ export const LoginForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  const { theme } = useSelector((state) => state)
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -41,7 +43,7 @@ export const LoginForm = () => {
   return (
     <div className="container mb-3">
     <form onSubmit={formik.handleSubmit}>
-    <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email:</label>
+    <label htmlFor="exampleInputEmail1" className={`form-label fw-bold ${theme === "light" ? "text-dark" : "text-light"}`} >Email:</label>
     <br/>
       <input
         name="email"
@@ -53,10 +55,10 @@ export const LoginForm = () => {
         className="form-control"
       />
       
-      {formik.errors.email && formik.touched.email ? (
+      {formik.errors.email && formik.touched.email ? (              
         <div>{formik.errors.email}</div>
       ) : null}
-       <label htmlFor="exampleInputPassword1" className="form-label fw-bold">Password:</label>
+       <label htmlFor="exampleInputPassword1" className={`form-label fw-bold ${theme === "light" ? "text-dark" : "text-light"}`} >Password:</label>
        <br/>
       <input
         name="password"
