@@ -1,6 +1,6 @@
 # movie-app
 It is a movie-app built with React. 
-I used this on this project:
+I used this libriaries on project:
 
   - ✨react-router-dom      
   - ✨react query
