@@ -15,7 +15,7 @@ function NavigationBar() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [clicked, setClicked] = useState(false)
-    const { theme, user } = useSelector(state => state)
+  const { theme, user } = useSelector(state => state)
 
     function handleChange(value) {
       navigate(`${value}`);
@@ -35,17 +35,15 @@ function NavigationBar() {
          <option value="toprated">Top Rated</option>
        </select>
 
-
         <Nav className="ms-auto">
 
-          <Nav.Link
+          <Nav.Link 
             onClick={() => {
               navigate("/")
             }}
           >
             Home
           </Nav.Link>
-
           
           <Nav.Link
             onClick={() => {

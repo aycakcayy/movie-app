@@ -13,9 +13,7 @@ function TopRated(){
       const POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
     return(
-
         <>
-        
         <>
          <div className="container">
              <div className="row">
@@ -28,10 +26,7 @@ function TopRated(){
                 }
              </div>
          </div>
-           
-        
         </>
-        
         </>
     )
 }
